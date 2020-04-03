@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>The HTML5 Herald</title>
+  <meta name="description" content="The HTML5 Herald">
+
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+  <header class="jumbotron">
+    <h1>JetBrains Internship. Задание</h1>
+    <h4>Упрощение учета времени в YouTrack-е</h4>
+  </header>
+  <div class="container">
+    <div class="row">
+      <div class="col-6 text-center">
+        <label for="firstWord">Введите первое слово</label>
+        <input type="text" id="firstWord" onchange="getValue(this.id)">
+      </div>
+
+      <div class="col-6 text-center">
+        <input type="text" id="secondWord" onchange="getValue(this.id)">
+      </div>
+    </div>
+
+    <div class="row text-center">
+      <div class="col">
+        <button type="submit" class="btn btn-primary" onclick="calculate()">Рассчитать</button>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-4 text-center">
+        <p>The edit distance:</p><p id="distance">1</p>
+      </div>
+
+      <div class="col-4 text-center">
+        <p>The first augmented string:</p><p id="augString1"></p>
+      </div>
+
+      <div class="col-4 text-center">
+        <p>The second augmented string:</p><p id="augString2"></p>
+      </div>
+    </div>
+  </div>
+  <script src="js/Edit_Distance_alignment.js"></script>
+  <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+  <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
