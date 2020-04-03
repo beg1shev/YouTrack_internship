@@ -8,45 +8,61 @@
   <meta name="description" content="The HTML5 Herald">
 
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
   <header class="jumbotron">
-    <h1>JetBrains Internship. Задание</h1>
-    <h4>Упрощение учета времени в YouTrack-е</h4>
+    <h1>JetBrains Internship Task</h1>
+    <h4>Simplify time tracking in YouTrack</h4>
   </header>
+
   <div class="container">
-    <div class="row">
-      <div class="col-6 text-center">
-        <label for="firstWord">Введите первое слово</label>
+    <div class="row row-content">
+      <div class="col-3">
+        <label for="firstWord">Enter first word:</label>
         <input type="text" id="firstWord" onchange="getValue(this.id)">
       </div>
+      
+      <div class="col-5">
+      </div>
 
-      <div class="col-6 text-center">
-        <input type="text" id="secondWord" onchange="getValue(this.id)">
+      <div class="col-4">
+        <p>The edit distance:</p><p id="distance"></p>
       </div>
     </div>
 
-    <div class="row text-center">
-      <div class="col">
-        <button type="submit" class="btn btn-primary" onclick="calculate()">Рассчитать</button>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-4 text-center">
-        <p>The edit distance:</p><p id="distance">1</p>
+    <div class="row row-content">
+      <div class="col-4">
       </div>
 
-      <div class="col-4 text-center">
+      <div class="col-4 my-auto">
+        <button type="submit" class="btn btn-dark" onclick="calculate()" id="but">Calculate</button>
+      </div>
+
+      <div class="col-4">
         <p>The first augmented string:</p><p id="augString1"></p>
       </div>
 
-      <div class="col-4 text-center">
+    </div>
+
+    <div class="row row-content">
+      <div class="col-3">
+        <label for="secondWord">Enter second word:</label>
+        <input type="text" id="secondWord" onchange="getValue(this.id)">
+      </div>
+      
+      <div class="col-5">
+      </div>
+
+      <div class="col-4">
         <p>The second augmented string:</p><p id="augString2"></p>
       </div>
+
     </div>
   </div>
+
   <script src="js/Edit_Distance_alignment.js"></script>
   <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
   <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>

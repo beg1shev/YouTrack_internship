@@ -1,6 +1,5 @@
 function levenshteinDistance(str1, str2){
   let matrix = Array(str1.length + 1).fill().map(() => Array(str2.length + 1).fill(0));
-  console.log(matrix);
   for (let i = 0; i < str1.length + 1; i++){
     matrix[i][0] = i;
   }
@@ -14,10 +13,7 @@ function levenshteinDistance(str1, str2){
   for (let [i, x] of str1.entries()){
     for (let [j, y] of str2.entries()){
     const toAdd = x === y ? 0 : 1;
-
     matrix[i + 1][j + 1] = Math.min(matrix[i][j] + toAdd, matrix[i + 1][j] + 1, matrix[i][j + 1] + 1);
-
-  
     }
   }
   return matrix;
@@ -39,7 +35,7 @@ function editAlign(str1, str2) {
       x--;
       y--;
     }
-    else{
+    else {
       if (matrix[x][y - 1] === minimum){
         out2 = str2[y - 1] + out2;
         out1 = "-" + out1;
@@ -64,6 +60,7 @@ function editAlign(str1, str2) {
 
 let str1 = "";
 let str2 = "";
+
 function getValue(id) {
   if (id === "firstWord"){
     str1 = document.getElementById(id).value;
@@ -78,14 +75,7 @@ function calculate(){
   const resString1 = result[0];
   const resString2 = result[1];
   const distance = result[2];
-  console.log(distance, resString1, resString2);
   document.getElementById("distance").innerHTML = distance;
   document.getElementById("augString1").innerHTML = resString1;
   document.getElementById("augString2").innerHTML = resString2;
 }
-
-// console.log(editAlign("cats", "car"))
-
-
-
-// console.log(resString1, resString2, distance);
